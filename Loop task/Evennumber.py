@@ -1,3 +1,3 @@
 Even_numbers = int(input("Enter a number: "))
-for i in range (2, 101, 2):
-    print (i, end='')
+for n in range (2, 101, 2):
+    print (n, end='')

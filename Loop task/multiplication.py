@@ -1,2 +1,3 @@
-digit = int(input("enter a digit))
-for i in range (1, 11)
+digit = int(input("Enter a digit: "))
+for x in range (1, 11):
+    print (x, end = ' ')
