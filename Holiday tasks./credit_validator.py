@@ -1,43 +1,64 @@
 def credit_card_digit_length(number):
-    print(f"Credit card digit length: {len(number)}")
-
-
+    length = len(str(number))    
+    number = str(5482707943)
+    if number >= 13 and number <= 16: 
+            print("Credit card digit length: Valid")
+    else: 
+            print("Credit card digit length: Invalid")
+ 
 def card_type(number):
-    if number.startswith("4"):
-        print("Credit card type: Visa card")
-    elif number.startswith("5"):
+    number = str(number)
+
+    if str(number).startswith("4"): 
+        print("Credit card type: Visa Card")  
+
+
+    elif str(number).startswith("5"):
         print("Credit card type: Master card")
-    elif number.startswith("37"):
+
+
+    elif str(number).startswith("37"):
         print("Credit card type: American express card")
-    elif number.startswith("6"):
+
+
+    elif str(number).startswith("6"):
         print("Credit card type: Discover card")
+
+
     else:
         print("Credit card type: Invalid")
 
 
-
-def credit_card_number(card):
-    print(f"Credit card Number: {card}")
-
-
-def credit_card_validator_status(number):
+def credit_card_validity_status(number):
+    number = str(number)
     sum_even = 0
+
+    for i in range(len(number) - 2, -1, - 2):
+
+#            int digit = number.charAt(i) - '0'
+        digit = int(number[i]) * 2
+
+        if (digit > 9): 
+                digit = digit - 9
+
+        sum_even = sumEven + digit
+    return sum_even
+
+
+def credit_card_validity_status_odd(number):
+    number = str(number)
     sum_odd = 0
 
-   
-    for index in range(len(number)):
-        digit = int(number[-(index + 1)])
+    for i in range(len(number) - 1, -1, -2):
+        sum_odd = sum_odd + int(number[i])
 
-        if index % 2 == 1:
-            digit *= 2
-            if digit > 9:
-                digit -= 9
-            sum_even += digit
-        else:
-            sum_odd += digit
+    return sum_odd
 
-    total = sum_even + sum_odd
 
+def credit_card_validity_status_total(number):
+    even = credit_card_validity_status(number)
+    odd = credit_card_validity_status_odd(number)
+ 
     if total % 10 == 0:
         print("Credit card validity status: valid")
     else:

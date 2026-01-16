@@ -33,7 +33,7 @@
 
 
 account_balance = 0
-transactions = " "
+transactions = []
 
 def deposit(amount, account_balance, transactions):
     account_balance = account_balance + amount 

@@ -1,32 +1,55 @@
-print("Good day,Welcome to Iya Scambirah Pizza Joint!")
+pizza_type = """
+                S/N       PIZZA TYPE           SLICE/BOX      PRICE
+                1:        Sapa size             4             2200
+                2:        Small money size      6             2400
+                3:        Big boys size         8             3000
+                4:        Odogwu size           12            4200
+"""
+                
+print(pizza_type)
 
-pizza_types = {
-    "sapa": {"slices":4 ,  "price": 2200},
-    "Small money": {"slices":6 ,  "price": 2400},
-    "Big boys": {"slices":8 ,  "price": 3000},
-    "Odogwu": {"slices":12 , "price": 4200},
-    }
+#pizza_types_option = int(input("Enter a pizza type: "))
 
-guests = int(input("Number of guests: "))
-pizza_choice = (input("Choose pizza type(sapa, small money, big boys, odogwu): "))
+def pizza_workings(guests, slice_per_box, price_per_box):
+            boxes = guests // slice_per_box
+            if guests % slice_per_box != 0:
+                boxes = boxes + 1
+            print("The number of boxes needed is: " , boxes)
 
-slice_per_box = pizza_types[pizza_choice]["slices"]
-price_per_box = pizza_types[pizza_choice]["price"]
+            total_slices = boxes * slice_per_box
+            leftover_slices = total_slices - guests
+            print("The leftover slices are: " ,  leftover_slices)
 
-boxes = guests // slice_per_box
-if guests % slice_per_box != 0:
-    boxes = boxes + 1
-
-total_slices = boxes * slice_per_box
-leftover_slices = total_slices - guests
-
-total_cost = boxes * price_per_box
-
-print("Boxes needed: " , boxes)
-print("Slices leftover: " ,  leftover_slices)
-#print("Slices leftover: " ,  leftover_slices)
-print("Total amount to pay: " , total_cost)
+            total_cost = boxes * price_per_box
+            print("The total cost is: ", total_cost)
 
 
+pizza_type_option = int(input("Enter a pizza type: "))
+guests = int(input("Enter number of guests: "))
    
+
+match (pizza_type_option):
+    case 1:
+        slice_per_box = 4
+        price_per_box = 2200
+        pizza_workings(guests, slice_per_box, price_per_box)
+    
+
+    case 2: 
+           slice_per_box = 6
+           price_per_box : 2400
+           pizza_workings(guests, slice_per_box, price_per_box)
+        
+
+    case 3: 
+            slice_per_box = 8 
+            price_per_box = 3000
+            pizza_workings(guests, slice_per_box, price_per_box)
+          
+
+    case 4:
+            slice_per_box = 8 
+            price_per_box = 3000
+            pizza_workings(guests, slice_per_box, price_per_box)
+        
 
