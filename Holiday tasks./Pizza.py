@@ -1,3 +1,4 @@
+
 pizza_type = """
                 S/N       PIZZA TYPE           SLICE/BOX      PRICE
                 1:        Sapa size             4             2200
@@ -52,4 +53,6 @@ match (pizza_type_option):
             price_per_box = 3000
             pizza_workings(guests, slice_per_box, price_per_box)
         
+
+
 

@@ -1,4 +1,5 @@
 def credit_card_digit_length(number):
+    
     length = len(str(number))    
     number = str(5482707943)
     if number >= 13 and number <= 16: 
@@ -31,28 +32,27 @@ def card_type(number):
 
 def credit_card_validity_status(number):
     number = str(number)
-    sum_even = 0
+    sum_of_even_position = 0
 
-    for i in range(len(number) - 2, -1, - 2):
+    for index in range(len(number) - 2, -1, - 2):
 
-#            int digit = number.charAt(i) - '0'
-        digit = int(number[i]) * 2
+        digit = int(number[index]) * 2
 
         if (digit > 9): 
                 digit = digit - 9
 
-        sum_even = sumEven + digit
-    return sum_even
+        sum_of_even_position = sumEven + digit
+    return sum_of_even_position
 
 
 def credit_card_validity_status_odd(number):
     number = str(number)
-    sum_odd = 0
+    sum_of_odd_position = 0
 
-    for i in range(len(number) - 1, -1, -2):
-        sum_odd = sum_odd + int(number[i])
+    for index in range(len(number) - 1, -1, -2):
+        sum_of_odd_position = sum_of_odd_position + int(number[index])
 
-    return sum_odd
+    return sum_of_odd_position
 
 
 def credit_card_validity_status_total(number):
